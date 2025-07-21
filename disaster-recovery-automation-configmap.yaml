@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  CLOUDFLARE_API_EMAIL: devops-cloudflare-nonprod@example.com
+  CLOUDFLARE_API_KEY: JDdJiomjujFL1oOw9hcPsPC80j389whQZUOzM1Zi
+  CLOUDFLARE_ZONE_ID: 12dac230b7981b164645ae0e3f0cc7b3
+  CLUSTER_NAME: example.com-nonprod--in-delhi
+  CLUSTER_REGION: asia-south2
+  DR_HOST: nonprod-in-delhi-01.1kosmos.in
+  GCP_AUTH_KEY_PATH: /root/gcloud-auth-key
+  GCP_PROJECT: example.com-nonprod
+  GCP_SERVICE_ACCOUNT: sa-disaster-recovery-nonprod@example.com-nonprod.iam.gserviceaccount.com
+  HEALTHZ_CHECK_IN_SECONDS: "60"
+  HEALTHZ_FAILURES_THRESHOLD: "5"
+  HEALTHZ_HOSTS: abc.example.com,xyz.example.com
+  HEALTHZ_PATHS: /users-mgmt-svc/healthz,/adminapi/healthz
+kind: ConfigMap
+metadata:
+  labels:
+    app: disaster-recovery-automation
+  name: disaster-recovery-automation-configmap
+  namespace: disaster-recovery
